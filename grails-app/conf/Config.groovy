@@ -89,3 +89,19 @@ log4j = {
            'org.hibernate',
            'net.sf.ehcache.hibernate'
 }
+
+rabbitmq {
+    connection = {
+        connection(
+            host: 'localhost',
+            username: 'guest',
+            password: 'guest',
+        )
+    }
+
+    queues = {
+        exchange name: 'me.sudofu.rabbitmq.local', type: 'direct', durable: false, {
+                queue name: 'test.silentFailure', binding: 'silentFailure'
+        }
+    }
+}

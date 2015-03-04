@@ -23,4 +23,8 @@ class SilentFailureController {
     def showError() {
         render(new JsonBuilder([time: new DateTime()]).toString())
     }
+
+    def fixError() {
+        render(new JsonBuilder([time: new DateTime().toString()]).toString())
+    }
 }
